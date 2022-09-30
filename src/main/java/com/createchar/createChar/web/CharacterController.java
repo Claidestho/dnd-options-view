@@ -15,6 +15,7 @@ import java.util.Arrays;
 @RequestMapping
 public class CharacterController {
 
+    private static String tabType[] = new String[]{"Paladin", "Magicien", "Voleur", "Pecno"};
     RestTemplate restTemplate = new RestTemplate();
     String BASE_URL = "http://localhost:8080/characters/";
 
@@ -38,13 +39,14 @@ public class CharacterController {
 
         //j'envois dans la vue l'objet chatForm
         model.addAttribute("charForm", charForm);
-
+        model.addAttribute("tabType", tabType);
         return "createChar";
     }
 
     @RequestMapping(value = "/creer-mon-personnage", method = RequestMethod.POST)
     public String storeCha(Model model,
                            @ModelAttribute("charForm") CharForm charForm) {
+        model.addAttribute("tabType", tabType);
         // je recupère la reponse de mon post => toujours grace aux attributs du form
         String name = charForm.getName();
         String type = charForm.getType();

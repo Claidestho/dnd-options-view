@@ -3,21 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>Donjons et dragons</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/style.css}"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 </head>
 <body>
-<div class="d-flex align-items-center flex-column">
-    <img class="header" th:src="@{/photos/DND-1.png}" alt="DnD photo" width="300"/>
-    <h1>Donjons et Dragons</h1>
-    <a href="/creer-mon-personnage">
-        <button type="button" class="btn btn-primary">Créer un personnage</button>
-    </a>
-    <a href="/liste-des-personnages">
-        <button type="button" class="btn btn-primary">Voir les personnages existants</button>
-    </a>
+<header>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand">
+                <img th:src="@{/photos/DD-logo-1.png}" alt="Logo" height="40"
+                     class="d-inline-block align-text-middle m-2">
+                <span class="m-3">Donjons & Dragons</span>
+            </a>
+            <div class="d-flex">
+                <a th:href="@{/liste-des-personnages}" class="btn btn-dark">Liste des personnages</a>
+                <a th:href="@{/creer-mon-personnage}" class="btn btn-dark">Créer un personnage</a>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="background-index" >
+    <div class="banner-text-index d-flex justify-content-center bg-dark bg-opacity-75 p-3">
+        <h1 class="text-align-center text-wrap mt-5" style="color: #d0cfcf; font-size: 3rem;">Welcome to
+            <img class="header" th:src="@{/photos/DD-logo-2.png}" alt="DnD photo" width="600"/>
+        </h1>
+    </div>
 </div>
-
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"

@@ -9,11 +9,18 @@ public class Character {
     private int hp;
     private int position;
 
+    private String image;
 
     //constructeur
     public Character() {
     }
 
+    public Character(String name, String type, int hp, String image) {
+        this.name = name;
+        this.type = type;
+        this.hp = hp;
+        this.image = image;
+    }
 
     public Character(int id, String name, String type, int hp) {
         this.id = id;
@@ -62,6 +69,14 @@ public class Character {
     public int getPosition() { return position; }
 
     public void setPosition(int position) { this.position = position; }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
 
     //Adaption à nos besoin du toString
     @Override
